@@ -2,6 +2,8 @@ import './App.css';
 import Header from './components/Header';
 import Product from './components/Product';
 import Footer from './components/Footer';
+import { Provider } from 'react-redux';
+import store from './redux/store';
 
 const products = [
   {
@@ -27,23 +29,25 @@ const products = [
     title: '',
     description: '',
     price: ''
-  }  
+  }
 ]
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      {products.map(product =>
-        <Product
-          key={product.title}
-          title={product.title}
-          image={product.image}
-          description={product.description}
-          price={product.price}
-        />)}
-      <Footer />
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <Header />
+        {products.map(product =>
+          <Product
+            key={product.title}
+            title={product.title}
+            image={product.image}
+            description={product.description}
+            price={product.price}
+          />)}
+        <Footer />
+      </div>
+    </Provider>
   );
 }
 
