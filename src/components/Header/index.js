@@ -16,7 +16,7 @@ function Header() {
         <button type="submit">OK</button>
       </form>
       <div className="shopping-cart">
-        <img alt="Shopping Cart" />
+        <img src='/images/cart.svg' alt="Shopping Cart" />
         <a href="#">Carrinho</a>
       </div>
     </header>
